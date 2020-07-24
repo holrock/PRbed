@@ -60,6 +60,7 @@ module PRbed
           yield(v, @fam, a)
         end
       end
+      self
     end
 
     alias_method :each, :each_variants

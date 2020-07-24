@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{PLINK bed file reader}
   spec.description   = %q{pure ruby implementation of PLINK bed file stream reader}
-  spec.homepage      = "https://github.com/holrock/prbed"
+  spec.homepage      = "https://github.com/holrock/PRbed"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
   spec.license       = "MIT"
 
