@@ -1,5 +1,3 @@
-require "PRbed/version"
-
 module PRbed
   class PRBedError < StandardError; end
 
@@ -37,10 +35,11 @@ module PRbed
   class Reader
     attr_reader :fam, :bim
 
-    def initialize(bfile)
+    def initialize(bfile, &block)
       @bfile = bfile
       @fam = load_fam("#{bfile}.fam")
       @bim = load_bim("#{bfile}.bim")
+      each_variants(&block) if block
     end
 
     def each_variants
@@ -64,6 +63,10 @@ module PRbed
     end
 
     alias_method :each, :each_variants
+
+    def inspect
+      "#<#{self.class}: @bfile='#{@bfile}' @bim=#{@bim.size} @fam=#{@fam.size}>"
+    end
 
     private
 

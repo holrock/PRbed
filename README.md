@@ -22,8 +22,7 @@ Or install it yourself as:
 
 ```ruby
 require "PRbed"
-r = PRbed::Reader.new("test/test") # bfile prefix
-r.each_variants do |variant, fam, genotypes|
+PRbed::Reader.new("test/test") do |variant, fam, genotypes| # bfile prefix
   p [variant, fam, genotypes]
 end
 ```
