@@ -18,6 +18,7 @@ jobs:
       with:
         ruby-version: 2.7
         bundler-cache: true
+
     - name: Run test
       run: |
         bundle install
@@ -32,4 +33,4 @@ jobs:
         gem build *.gemspec
         gem push *.gem
       env:
-        GEM_HOST_API_KEY: "Bearer ${{secrets.RUBYGEMS_AUTH_TOKEN}}"
+        GEM_HOST_API_KEY: "${{secrets.RUBYGEMS_AUTH_TOKEN}}"
